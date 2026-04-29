@@ -1,0 +1,103 @@
+{
+  "request_context": {
+    "user_id": "u_001",
+    "timestamp": "2026-04-22T21:05:00",
+    "detected_pattern": "Tuesday 21:00 light meal",
+    "pattern_confidence": 0.87,
+    "active_goal": "high-protein, low-calorie"
+  },
+
+  "constraints_applied": {
+    "budget_max": 200,
+    "calorie_max": 600,
+    "derived_meal_protein_target": 35,
+    "spice_level": "low",
+    "diet_type": "non-veg"
+  },
+
+  "behavioral_signals": {
+    "temporal_pattern_match": {
+      "pattern": "Tuesday 21:00 light meal",
+      "score": 0.92
+    },
+    "acceptance_history": {
+      "similar_meals": 5,
+      "accepted": 4,
+      "acceptance_rate": 0.8
+    }
+  },
+
+  "candidate_evaluation": [
+    {
+      "item": "Grilled Chicken Bowl",
+      "restaurant": "EatFit",
+      "price": 149,
+      "estimated_nutrition": {
+        "calories": 520,
+        "protein_g": 42,
+        "source": "LLM_v1"
+      },
+      "scores": {
+        "temporal_match": 0.92,
+        "goal_alignment": 0.95,
+        "budget_fit": 0.9,
+        "historical_acceptance": 0.8
+      },
+      "final_score": 0.91
+    },
+    {
+      "item": "Chicken Biryani",
+      "restaurant": "Local Kitchen",
+      "price": 180,
+      "estimated_nutrition": {
+        "calories": 780,
+        "protein_g": 28,
+        "source": "LLM_v1"
+      },
+      "scores": {
+        "temporal_match": 0.6,
+        "goal_alignment": 0.4,
+        "budget_fit": 0.85,
+        "historical_acceptance": 0.7
+      },
+      "final_score": 0.63,
+      "rejected_reason": "exceeds calorie constraint, low goal alignment"
+    }
+  ],
+
+  "generated_basket": [
+    {
+      "item": "Grilled Chicken Bowl",
+      "restaurant": "EatFit",
+      "price": 149,
+      "nutrition": {
+        "calories": 520,
+        "protein_g": 42
+      }
+    },
+    {
+      "item": "Nimbu Pani",
+      "restaurant": "EatFit",
+      "price": 39,
+      "nutrition": {
+        "calories": 0,
+        "protein_g": 0
+      }
+    }
+  ],
+
+  "basket_summary": {
+    "total_price": 188,
+    "total_calories": 520,
+    "total_protein_g": 42,
+    "within_budget": true,
+    "within_calorie_target": true,
+    "protein_goal_met": true
+  },
+
+  "confidence_score": 0.91,
+  "decision_reason": "strong temporal pattern match + meets protein target + aligns with past accepted meals",
+
+  "action": "auto-execute",
+  "fallback": "confirm_with_user_if_confidence_below_0.85"
+}
