@@ -1,1 +1,37 @@
+{
+  "user_id": "u_001",
 
+  "behavioral_patterns": [
+    {
+      "day": "Tuesday",
+      "time_slot": "21:00",
+      "avg_budget": 200,
+      "meal_type": "light"
+    }
+  ],
+
+  "preferences": {
+    "cuisines": ["Indian", "Healthy"],
+    "diet_type": "non-veg",
+    "spice_level": "low"
+  },
+
+  "health_profile": {
+    "daily_calories_target": 1800,
+    "protein_target_g": 120,
+    "budget_per_meal": 250
+  },
+
+  "order_history": [
+    {
+      "date": "2026-04-22",
+      "items": ["Grilled Chicken Bowl", "Nimbu Pani"],
+      "total_amount": 189,
+      "estimated_nutrition": {
+        "calories": 520,
+        "protein_g": 42
+      },
+      "accepted_recommendation": true
+    }
+  ]
+}
